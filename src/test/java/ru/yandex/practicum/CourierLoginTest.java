@@ -61,7 +61,7 @@ public class CourierLoginTest {
         // Проверка
         assertEquals(SC_NOT_FOUND, responseLogin.statusCode());
         ErrorResponse errorResponse = responseLogin.as(ErrorResponse.class);
-        assertEquals("Учетная запись не найдена", errorResponse.message);
+        assertEquals("Учетная запись не найдена", errorResponse.getMessage());
     }
 
     @Test
@@ -75,7 +75,7 @@ public class CourierLoginTest {
         // Проверка
         assertEquals(SC_NOT_FOUND, responseLogin.statusCode());
         ErrorResponse errorResponse = responseLogin.as(ErrorResponse.class);
-        assertEquals("Учетная запись не найдена", errorResponse.message);
+        assertEquals("Учетная запись не найдена", errorResponse.getMessage());
     }
 
     @Test
@@ -89,7 +89,7 @@ public class CourierLoginTest {
         // Проверка
         assertEquals(SC_NOT_FOUND, responseLogin.statusCode());
         ErrorResponse errorResponse = responseLogin.as(ErrorResponse.class);
-        assertEquals("Учетная запись не найдена", errorResponse.message);
+        assertEquals("Учетная запись не найдена", errorResponse.getMessage());
     }
 
     @Test
@@ -103,7 +103,7 @@ public class CourierLoginTest {
         // Проверка
         assertEquals(SC_BAD_REQUEST, responseLogin.statusCode());
         ErrorResponse errorResponse = responseLogin.as(ErrorResponse.class);
-        assertEquals("Недостаточно данных для входа", errorResponse.message);
+        assertEquals("Недостаточно данных для входа", errorResponse.getMessage());
     }
 
     @Test
@@ -117,7 +117,7 @@ public class CourierLoginTest {
         // Проверка
         assertEquals(SC_BAD_REQUEST, responseLogin.statusCode());
         ErrorResponse errorResponse = responseLogin.as(ErrorResponse.class);
-        assertEquals("Недостаточно данных для входа", errorResponse.message);
+        assertEquals("Недостаточно данных для входа", errorResponse.getMessage());
     }
 
     @Test
@@ -131,6 +131,6 @@ public class CourierLoginTest {
         // Проверка
         assertEquals(SC_BAD_REQUEST, responseLogin.statusCode());
         ErrorResponse errorResponse = responseLogin.as(ErrorResponse.class);
-        assertEquals("Недостаточно данных для входа", errorResponse.message);
+        assertEquals("Недостаточно данных для входа", errorResponse.getMessage());
     }
 }

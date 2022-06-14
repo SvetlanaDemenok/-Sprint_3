@@ -45,7 +45,7 @@ public class CourierNewTest {
         // Проверка
         assertEquals(SC_CREATED, responseCreate.statusCode());
         CreateCourierResponse createCourierResponse = responseCreate.as(CreateCourierResponse.class);
-        assertTrue(createCourierResponse.ok);
+        assertTrue(createCourierResponse.getOk());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class CourierNewTest {
         // Проверка
         assertEquals(SC_CREATED, responseCreate.statusCode());
         CreateCourierResponse createCourierResponse = responseCreate.as(CreateCourierResponse.class);
-        assertTrue(createCourierResponse.ok);
+        assertTrue(createCourierResponse.getOk());
 
         // Делаем действие еще раз
         responseCreate = courierClient.createCourier(courier);
@@ -65,7 +65,7 @@ public class CourierNewTest {
         // Проверка
         assertEquals(SC_CONFLICT, responseCreate.statusCode());
         ErrorResponse errorResponse = responseCreate.as(ErrorResponse.class);
-        assertEquals("Этот логин уже используется", errorResponse.message);
+        assertEquals("Этот логин уже используется", errorResponse.getMessage());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class CourierNewTest {
         // Проверка
         assertEquals(SC_BAD_REQUEST, responseCreate.statusCode());
         ErrorResponse errorResponse = responseCreate.as(ErrorResponse.class);
-        assertEquals("Недостаточно данных для создания учетной записи", errorResponse.message);
+        assertEquals("Недостаточно данных для создания учетной записи", errorResponse.getMessage());
     }
 
     @Test
@@ -93,7 +93,7 @@ public class CourierNewTest {
         // Проверка
         assertEquals(SC_BAD_REQUEST, responseCreate.statusCode());
         ErrorResponse errorResponse = responseCreate.as(ErrorResponse.class);
-        assertEquals("Недостаточно данных для создания учетной записи", errorResponse.message);
+        assertEquals("Недостаточно данных для создания учетной записи", errorResponse.getMessage());
     }
 
     @Test
@@ -107,6 +107,6 @@ public class CourierNewTest {
         // Проверка
         assertEquals(SC_BAD_REQUEST, responseCreate.statusCode());
         ErrorResponse errorResponse = responseCreate.as(ErrorResponse.class);
-        assertEquals("Недостаточно данных для создания учетной записи", errorResponse.message);
+        assertEquals("Недостаточно данных для создания учетной записи", errorResponse.getMessage());
     }
 }

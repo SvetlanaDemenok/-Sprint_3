@@ -1,9 +1,13 @@
 package ru.yandex.practicum.scooter.api.model;
 
 public class CreateCourierResponse {
-    public Boolean ok;
+    private Boolean ok;
 
     public CreateCourierResponse(Boolean ok) {
         this.ok = ok;
+    }
+
+    public Boolean getOk() {
+        return ok;
     }
 }
